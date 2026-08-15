@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bilara Vehicle Management</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand"><picture><source media="(prefers-color-scheme: light)" srcset="/assets/bilara-logo-white.png"><img class="company-logo" src="/assets/bilara-logo-white.png" alt="Bilara Group logo"></picture><div><strong>Bilara</strong><span>Vehicle Management</span></div></div>
+      <nav class="side-nav">
+        <p>Overview</p><button class="nav-item active" data-section="dashboard"><span>◉</span> Dashboard</button>
+        <p>Operations</p><button class="nav-item" data-section="vehicles"><span>🚙</span> Vehicles</button><button class="nav-item" data-section="bookings"><span>📅</span> Bookings</button><button class="nav-item" data-section="trips"><span>↗</span> Active trips</button><button class="nav-item" data-section="inspections"><span>✓</span> Inspections & incidents</button><button class="nav-item" data-section="washing"><span>✦</span> Washing</button>
+        <p>Reports</p><button class="nav-item" data-section="reports"><span>▥</span> Reports & analytics</button>
+        <p>Administration</p><button class="nav-item" data-section="admin"><span>♙</span> Users & access</button><button class="nav-item" data-section="audit"><span>≡</span> Audit log</button>
+        <button class="nav-item" data-section="maintenance"><span>W</span> Maintenance</button>
+      </nav>
+      <div class="sidebar-footer"><button id="themeToggle" class="quiet">☾ Dark mode</button><div class="profile"><span id="avatar">GZ</span><div><strong id="profileName">George Zen Joe</strong><small id="profileRole">Super Admin</small></div></div></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><button id="menuToggle" class="icon-button">☰</button><div class="breadcrumbs"><span>Vehicle operations</span><b>/</b><strong id="pageTitle">Dashboard</strong></div><div class="top-actions"><button id="refresh" class="secondary">↻ Refresh</button><button class="primary" onclick="openBooking()">+ New booking</button><div class="user-chip" id="session">D1 APPLICATION</div></div></header>
+      <main>
+        <section class="page-heading"><div><p class="eyebrow">BILARA GROUP · OPERATIONS CONTROL</p><h1 id="welcome">Good day, George Zen Joe</h1><p id="pageSubtitle">Bookings, trips, inspections, maintenance and washing in one place.</p></div><div class="heading-date" id="today"></div></section>
+        <section id="dashboard" class="view"></section><section id="vehicles" class="view" hidden></section><section id="bookings" class="view" hidden></section><section id="trips" class="view" hidden></section><section id="inspections" class="view" hidden></section><section id="maintenance" class="view" hidden></section><section id="washing" class="view" hidden></section><section id="reports" class="view" hidden></section><section id="admin" class="view" hidden></section><section id="audit" class="view" hidden></section>
+      </main>
+    </div>
+  </div>
+  <dialog id="modal"><div id="modal-body"></div></dialog><div id="toast" class="toast"></div><script type="module" src="/app.js"></script>
+</body>
+</html>

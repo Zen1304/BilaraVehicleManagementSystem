@@ -1,0 +1,13 @@
+{
+  "name": "bilara-vehicle-management-webapp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check src/worker.js && node --check public/app.js && node tests/smoke.mjs",
+    "dev": "wrangler dev",
+    "db:local": "wrangler d1 execute bilara-vms --local --file=schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

@@ -1,0 +1,20 @@
+name = "bilara-vehicle-management"
+main = "src/worker.js"
+compatibility_date = "2026-08-01"
+workers_dev = true
+preview_urls = false
+
+[assets]
+directory = "public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bilara-vms"
+database_id = "c75eb77c-5c9c-498e-8006-f865fee455a1"
+
+[vars]
+APP_NAME = "Bilara Vehicle Management"
+WASHING_INTERVAL_DAYS = "7"
+ACCESS_AUDIENCE = "ad9458e8a739e450072862676b89e5d215a32cede8ca77c82e19d5c15e48ea57"
+ACCESS_JWKS_URL = "https://bilara-vehicle-management-webapp.cloudflareaccess.com/cdn-cgi/access/certs"
