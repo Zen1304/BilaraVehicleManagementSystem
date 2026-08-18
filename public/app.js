@@ -53,3 +53,5 @@ async function submitClaim(){try{await api('claims',{method:'POST',body:JSON.str
 async function settleClaim(id){try{const c=state.claims.find(x=>x.id===id);await api(`claims/${id}`,{method:'PUT',body:JSON.stringify({vehicle_id:c.vehicle_id,description:'Settled claim',claim_status:'SETTLED'})});toast('Claim settled');await refresh()}catch(e){toast(e.message,true)}}
 renderInspections=renderInspectionsV2;Object.assign(window,{openDamage,submitDamage,resolveDamage,openClaim,submitClaim,settleClaim});
 const roleVisibilityTimer=setInterval(()=>{const r=state.user?.role||'USER';const adminNav=document.querySelector('[data-section="admin"]');const auditNav=document.querySelector('[data-section="audit"]');if(adminNav)adminNav.hidden=!['ADMIN','SUPER_ADMIN'].includes(r);if(auditNav)auditNav.hidden=r!=='SUPER_ADMIN'},500);
+function logout(){if(['127.0.0.1','localhost'].includes(location.hostname)){toast('Local development has no sign-in session.');return}location.assign('/cdn-cgi/access/logout')}
+document.querySelector('#logout')?.addEventListener('click',logout);Object.assign(window,{logout});
